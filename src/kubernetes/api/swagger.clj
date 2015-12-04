@@ -45,12 +45,14 @@
 (defn renderable-op?
   "Return true if op is renderable"
   [{:keys [produces nickname] :as op}]
-  (some #{"application/json"} produces))
+  (and (some #{"application/json"} produces)
+       (not (.startsWith nickname "watch"))))
 
 (defn param-by-f [params f]
   (->> params
        (filter f)
        (map :name)
+       (map camel->dashed)
        (map keyword)
        vec))
 (defn param-by-type [params type] (param-by-f params #(= (:paramType %) type)))
@@ -60,7 +62,7 @@
                   params :parameters
                   [{ret-type :responseModel}] :responseMessages
                   :as op}]
-  (let [parameters (filter renderable-param? params)
+  (let [params (filter renderable-param? params)
         fn-name (symbol (camel->dashed nickname))
         doc-str (render-doc-str method path summary ret-type params)
         method-kw (-> method str/lower-case keyword)

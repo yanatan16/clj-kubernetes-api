@@ -10,14 +10,14 @@
               (str/join "")))
 (def nsopt {:namespace tns})
 (def pod {:kind "Pod"
-          :metadata {:name "test"}
+          :metadata {:name "test" :labels {:test "yes"}}
           :spec {:containers [{:name "nginx"
                                :image "nginx"}]}})
 
 (use-fixtures :once
   (fn [f]
     (<!! (v1/create-namespaced-namespace ctx {:metadata {:name tns}}))
-    (<!! (async/timeout 1000))
+    (<!! (async/timeout 2000))
     (f)
     (<!! (v1/delete-namespaced-namespace ctx {} {:name tns}))))
 
@@ -51,5 +51,13 @@
       (let [{:keys [kind items]} (<!! (v1/list-namespaced-pod ctx nsopt))]
         (is (= kind "PodList"))
         (is (= @name (get-in items [0 :metadata :name])))))
+    (testing "list-namespaced-pod with label-selector"
+      (let [{:keys [kind items]} (<!! (v1/list-namespaced-pod ctx (assoc  nsopt :label-selector "test=yes")))]
+        (is (= kind "PodList"))
+        (is (= @name (get-in items [0 :metadata :name])))))
+    (testing "list-namespaced-pod with bad label-selector"
+      (let [{:keys [kind items]} (<!! (v1/list-namespaced-pod ctx (assoc nsopt :label-selector "dasfads=no")))]
+        (is (= kind "PodList"))
+        (is (= (count items) 0))))
     (testing "delete-namespaced-pod"
       (is (some? (<!! (v1/delete-namespaced-pod ctx {} (assoc nsopt :name @name))))))))

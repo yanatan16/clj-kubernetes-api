@@ -13,9 +13,12 @@
              path
              params))
 
+(defn dashed->camel [s]
+  (str/replace s #"-([a-z])" #(str/upper-case (second %))))
+
 (defn- query-str [query]
   (->> query
-       (map (fn [[k v]] (str (name k) "=" v)))
+       (map (fn [[k v]] (str (dashed->camel (name k)) "=" v)))
        (str/join "&")))
 
 (defn- url [{:keys [server]} path params query]

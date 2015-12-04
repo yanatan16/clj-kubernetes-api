@@ -6,4 +6,8 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/core.async "0.2.374"]
                  [org.clojure/data.json "0.2.6"]
-                 [http-kit "2.1.18"]])
+                 [http-kit "2.1.18"]]
+
+  :codox {:namespaces [#"kubernetes\.api\.v\d.*"]}
+
+  :profiles {:dev {:plugins [[lein-codox "0.9.0"]]}})
