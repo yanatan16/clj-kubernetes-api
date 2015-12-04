@@ -33,7 +33,7 @@ Each endpoint function returns a [core.async](https://github.com/clojure/core.as
 (<!! (k8s/create-namespaced-pod ctx
        {:kind "Pod" :metadata {:name "test"}
         :spec {:containers [{:name "nginx" :image "nginx"}]}}
-       {:namespace "default"))
+       {:namespace "default"}))
 
 ;; Use a label selector when listing pods
 (<!! (k8s/list-pod ctx {:label-selector "kube-system=true"}))
