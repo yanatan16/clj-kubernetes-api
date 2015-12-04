@@ -6,11 +6,9 @@ Kubernetes client API library for Clojure. Functions are generated using macros 
 
 ## Installation
 
-Add the dependency to your `project.clj`
+Add the dependency to your `project.clj`.
 
-```clojure
-:dependencies [[kubernetes-api "0.1.0"]]
-```
+[![Clojars Project](http://clojars.org/kubernetes-api/latest-version.svg)](http://clojars.org/kubernetes-api)
 
 ## Usage
 
