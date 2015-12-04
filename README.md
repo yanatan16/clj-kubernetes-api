@@ -2,9 +2,11 @@
 
 Kubernetes client API library for Clojure. Functions are generated using macros derived from offical [swagger spec](http://kubernetes.io/swagger-spec/api/v1).
 
-Documentation available at http://yanatan16.github.io/clj-kubernetes-io
+`codox` documentation available at http://joneisen.me/clj-kubernetes-api/
 
 ## Installation
+
+Add the dependency to your `project.clj`
 
 ```clojure
 :dependencies [[kubernetes-api "0.1.0"]]
@@ -33,7 +35,7 @@ Each endpoint function returns a [core.async](https://github.com/clojure/core.as
 (<!! (k8s/create-namespaced-pod ctx
        {:kind "Pod" :metadata {:name "test"}
         :spec {:containers [{:name "nginx" :image "nginx"}]}}
-       {:namespace "default))
+       {:namespace "default"))
 
 ;; Use a label selector when listing pods
 (<!! (k8s/list-pod ctx {:label-selector "kube-system=true"}))
