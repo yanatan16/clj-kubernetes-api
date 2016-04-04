@@ -24,10 +24,10 @@ Each endpoint function returns a [core.async](https://github.com/clojure/core.as
 (def ctx (k8s/make-context "http://localhost:8080"))
 
 ;; List all nodes
-(<!! (k8s/list-namespaced-nodes ctx))
+(<!! (k8s/list-namespaced-node ctx))
 
 ;; Pass an optional parameter
-(<!! (k8s/list-namespaced-nodes ctx {:namespace "default"}))
+(<!! (k8s/list-namespaced-node ctx {:namespace "default"}))
 
 ;; Create a pod
 (<!! (k8s/create-namespaced-pod ctx
