@@ -16,18 +16,18 @@
 
 (use-fixtures :once
   (fn [f]
-    (<!! (v1/create-namespaced-namespace ctx {:metadata {:name tns}}))
+    (<!! (v1/create-namespace ctx {:metadata {:name tns}}))
     (<!! (async/timeout 2000))
     (f)
-    (<!! (v1/delete-namespaced-namespace ctx {} {:name tns}))))
+    (<!! (v1/delete-namespace ctx {} {:name tns}))))
 
 (deftest node-test
   (testing "get all nodes"
-    (let [{:keys [kind items]} (<!! (v1/list-namespaced-node ctx))]
+    (let [{:keys [kind items]} (<!! (v1/list-node ctx))]
       (is (= kind "NodeList"))
       (is (= (count items) 1))))
   (testing "get nodes with options"
-    (let [{:keys [kind]} (<!! (v1/list-namespaced-node ctx nsopt))]
+    (let [{:keys [kind]} (<!! (v1/list-node ctx nsopt))]
       (is (= kind "NodeList")))))
 
 (deftest pod-test
@@ -44,7 +44,7 @@
         (is (= kind "Pod"))
         (is (= @name (:name metadata)))))
     (testing "list-pod"
-      (let [{:keys [kind items]} (<!! (v1/list-pod ctx))]
+      (let [{:keys [kind items]} (<!! (v1/list-namespaced-pod ctx nsopt))]
         (is (= kind "PodList"))
         (is (some #(= @name (get-in % [:metadata :name])) items))))
     (testing "list-namespaced-pod"
