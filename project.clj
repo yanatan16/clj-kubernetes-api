@@ -1,4 +1,4 @@
-(defproject kubernetes-api "0.2.0-SNAPSHOT"
+(defproject kubernetes-api "0.2.1-SNAPSHOT"
   :description "Kubernetes Client API Library"
   :url "https://github.com/yanatan16/clj-kubernetes-api"
   :license {:name "MIT"
@@ -13,7 +13,7 @@
                   ["clojars"  {:url "https://clojars.org/repo/"}]
                   ["nu-maven" {:url "s3p://nu-maven/releases/"
                   :username [:gpg :env/artifacts_aws_access_key_id]
-                  :passphrase [:gpg :env/artifacts_aws_secret_access_key]}]]1
+                  :passphrase [:gpg :env/artifacts_aws_secret_access_key]}]]
 
   :codox {:namespaces [#"kubernetes\.api\.v\d.*"]}
 
