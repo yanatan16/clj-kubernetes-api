@@ -13,7 +13,7 @@
                   ["clojars"  {:url "https://clojars.org/repo/"}]
                   ["nu-maven" {:url "s3p://nu-maven/releases/"
                   :username [:gpg :env/artifacts_aws_access_key_id]
-                  :passphrase [:gpg :env/artifacts_aws_secret_access_key]}]]1
+                  :passphrase [:gpg :env/artifacts_aws_secret_access_key]}]]
 
   :codox {:namespaces [#"kubernetes\.api\.v\d.*"]}
 
