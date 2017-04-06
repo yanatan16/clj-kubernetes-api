@@ -15,7 +15,7 @@
 (def deployment-name (random-name))
 
 (def nsopt {:namespace tns})
-(def deployment {:apiVersion "extensions/e-v1beta1"
+(def deployment {:apiVersion "extensions/v1beta1"
                  :kind       "Deployment"
                  :metadata   {:name deployment-name}
                  :spec       {:template {:metadata {:labels {:service "service"}}
