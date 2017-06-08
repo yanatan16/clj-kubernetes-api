@@ -4,6 +4,8 @@
   :license {:name "MIT"
             :url "https://github.com/yanatan16/clj-kubernetes-api/blob/master/LICENSE"}
 
+  :plugins [[s3-wagon-private "1.2.0"]]
+
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/core.async "0.2.374"]
                  [org.clojure/data.json "0.2.6"]
