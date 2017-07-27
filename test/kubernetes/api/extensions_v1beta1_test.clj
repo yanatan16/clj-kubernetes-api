@@ -56,6 +56,6 @@
       (is (= (:name metadata) deployment-name))))
 
   (testing "deleting deployment"
-    (let [_ 1 #_(<!! (e-v1beta1/delete-namespaced-deployment ctx {} (assoc nsopt :name deployment-name)))
+    (let [_ (<!! (e-v1beta1/delete-namespaced-deployment ctx {} (assoc nsopt :name deployment-name)))
           {:keys [reason]} (<!! (e-v1beta1/read-namespaced-deployment ctx (assoc nsopt :name deployment-name)))]
       (is (= "NotFound" reason)))))
