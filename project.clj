@@ -1,13 +1,11 @@
-(defproject kubernetes-api "0.3.2-SNAPSHOT"
+(defproject kubernetes-api "0.3.3-SNAPSHOT"
   :description "Kubernetes Client API Library"
   :url "https://github.com/yanatan16/clj-kubernetes-api"
   :license {:name "MIT"
             :url "https://github.com/yanatan16/clj-kubernetes-api/blob/master/LICENSE"}
 
-  :plugins [[s3-wagon-private "1.3.0"]]
-
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/core.async "0.2.374"]
+  :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
+                 [org.clojure/core.async "0.3.442"]
                  [org.clojure/data.json "0.2.6"]
                  [http-kit "2.1.18"]]
 
