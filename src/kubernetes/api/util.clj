@@ -33,13 +33,14 @@
     :else (json/read-str body :key-fn keyword)))
 
 (defn request [ctx {:keys [method path params query body]}]
-  (let [c (chan)]
+  (let [c (chan)
+        content-type (if (= method :patch) "application/merge-patch+json" "application/json")]
     (http/request
      (cond-> {:url (url ctx path params query)
               :method method
               :as :text}
        body (assoc :body (json/write-str body)
-                   :content-type :json))
+                   :headers  {"Content-Type" content-type}))
      #(go (let [resp (parse-response %)]
             #_(println "Request" method path query body resp)
             (>! c resp))))
