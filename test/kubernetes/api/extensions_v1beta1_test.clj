@@ -36,6 +36,15 @@
       (is (= kind "Deployment"))
       (is (= (:name metadata) deployment-name))))
 
+  (testing "updating deployments"
+    (let [new-image "nginx:1.13.3"
+          patch-param {:spec {:template {:spec {:containers [{:name "nginx"
+                                                              :image new-image}]}}}}
+          updated-image (->> (assoc nsopt :name deployment-name)
+                             (e-v1beta1/patch-namespaced-deployment ctx patch-param)
+                             (<!!) :spec :template :spec :containers first :image)]
+      (is (= updated-image new-image))))
+
   (testing "listing deployments"
     (let [deployments (<!! (e-v1beta1/list-namespaced-deployment ctx nsopt))]
       (is (= deployment-name (-> deployments :items first :metadata :name)))
