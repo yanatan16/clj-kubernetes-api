@@ -2,8 +2,6 @@
   (:require [clojure.string :as str]
             [clojure.core.async :refer [go <! >! chan]]
             [org.httpkit.client :as http]
-            [common-crypto.keyczar.core :as keyczar]
-            [common-core.misc :as misc]
             [clojure.data.json :as json]))
 
 (defn make-context [server username password]
