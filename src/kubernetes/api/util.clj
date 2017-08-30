@@ -4,7 +4,7 @@
             [org.httpkit.client :as http]
             [clojure.data.json :as json]))
 
-(defn make-context [server username password]
+(defn make-context [server & {:keys [username password]}]
   {:server server
    :username username
    :password password})
@@ -49,16 +49,14 @@
 (defn request [{:keys [username password] :as ctx} {:keys [method path params query body]}]
   (let [c (chan)
         ct (content-type method)
-        authentication (token username password)]
+        basic-auth (token username password)]
     (http/request
      (cond-> {:url (url ctx path params query)
               :method method
               :insecure? true
-              :basic-auth authentication
               :as :text}
+       basic-auth (assoc :basic-auth basic-auth)
        body (assoc :body (json/write-str body)
                    :headers  {"Content-Type" ct}))
-     #(go (let [resp (parse-response %)]
-            #_(println "Request" method path query body resp)
-            (>! c resp))))
+     #(go (>! c (parse-response %))))
     c))
