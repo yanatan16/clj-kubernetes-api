@@ -1,4 +1,4 @@
-(defproject kubernetes-api "0.3.3-SNAPSHOT"
+(defproject kubernetes-api "0.3.4-SNAPSHOT"
   :description "Kubernetes Client API Library"
   :url "https://github.com/yanatan16/clj-kubernetes-api"
   :license {:name "MIT"
@@ -9,6 +9,8 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
                  [org.clojure/core.async "0.3.442"]
                  [org.clojure/data.json "0.2.6"]
+                 [common-crypto "8.70.0-SNAPSHOT"]
+                 [common-core "9.38.0-SNAPSHOT"]
                  [http-kit "2.1.18"]]
 
   :repositories  [["central"  {:url "http://repo1.maven.org/maven2/" :snapshots false}]
