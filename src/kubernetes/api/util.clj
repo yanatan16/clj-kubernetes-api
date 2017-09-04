@@ -4,8 +4,10 @@
             [org.httpkit.client :as http]
             [clojure.data.json :as json]))
 
-(defn make-context [server]
-  {:server server})
+(defn make-context [server & {:keys [username password]}]
+  {:server server
+   :username username
+   :password password})
 
 (defn- parameterize-path [path params]
   (reduce-kv (fn [s k v]
@@ -27,21 +29,34 @@
        (if (empty? query) "" "?")
        (query-str query)))
 
+(defn- token [username password]
+  (when (and username password)
+    (str username ":" password)))
+
+(defn- content-type [method]
+  (if (= method :patch)
+    "application/merge-patch+json"
+    "application/json"))
+
 (defn parse-response [{:keys [status headers body error]}]
   (cond
     error {:success false :error error}
-    :else (json/read-str body :key-fn keyword)))
+    :else (try
+            (json/read-str body :key-fn keyword)
+            (catch Exception e
+              body))))
 
-(defn request [ctx {:keys [method path params query body]}]
+(defn request [{:keys [username password] :as ctx} {:keys [method path params query body]}]
   (let [c (chan)
-        content-type (if (= method :patch) "application/merge-patch+json" "application/json")]
+        ct (content-type method)
+        basic-auth (token username password)]
     (http/request
      (cond-> {:url (url ctx path params query)
               :method method
+              :insecure? true
               :as :text}
+       basic-auth (assoc :basic-auth basic-auth)
        body (assoc :body (json/write-str body)
-                   :headers  {"Content-Type" content-type}))
-     #(go (let [resp (parse-response %)]
-            #_(println "Request" method path query body resp)
-            (>! c resp))))
+                   :headers  {"Content-Type" ct}))
+     #(go (>! c (parse-response %))))
     c))
