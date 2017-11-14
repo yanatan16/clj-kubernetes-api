@@ -9,7 +9,8 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
                  [org.clojure/core.async "0.3.442"]
                  [org.clojure/data.json "0.2.6"]
-                 [http-kit "2.1.18"]]
+                 [http-kit "2.1.18"]
+                 [less-awful-ssl "1.0.1"]]
 
   :repositories  [["central"  {:url "http://repo1.maven.org/maven2/" :snapshots false}]
                   ["clojars"  {:url "https://clojars.org/repo/"}]
