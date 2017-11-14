@@ -2,12 +2,11 @@
   (:require [clojure.string :as str]
             [clojure.core.async :refer [go <! >! chan]]
             [org.httpkit.client :as http]
-            [clojure.data.json :as json]))
+            [clojure.data.json :as json]
+            [less.awful.ssl :as ssl]))
 
-(defn make-context [server & {:keys [username password]}]
-  {:server server
-   :username username
-   :password password})
+(defn make-context [server opts]
+  (merge {:server server} opts))
 
 (defn- parameterize-path [path params]
   (reduce-kv (fn [s k v]
@@ -29,9 +28,12 @@
        (if (empty? query) "" "?")
        (query-str query)))
 
-(defn- token [username password]
-  (when (and username password)
-    (str username ":" password)))
+(defn- new-basic-auth-token [username password]
+  (str username ":" password))
+
+(defn- new-ssl-engine [ca-cert client-cert client-key]
+  (-> (ssl/ssl-context client-key client-cert ca-cert)
+      ssl/ssl-context->engine))
 
 (defn- content-type [method]
   (if (= method :patch)
@@ -46,17 +48,20 @@
             (catch Exception e
               body))))
 
-(defn request [{:keys [username password] :as ctx} {:keys [method path params query body]}]
-  (let [c (chan)
-        ct (content-type method)
-        basic-auth (token username password)]
-    (http/request
-     (cond-> {:url (url ctx path params query)
-              :method method
-              :insecure? true
-              :as :text}
-       basic-auth (assoc :basic-auth basic-auth)
-       body (assoc :body (json/write-str body)
-                   :headers  {"Content-Type" ct}))
-     #(go (>! c (parse-response %))))
+(defn- request-opts [{:keys [username password ca-cert client-cert client-key] :as ctx} {:keys [method path params query body]}]
+  (let [ct (content-type method)
+        basic-auth? (and username password)
+        client-cert? (and ca-cert client-cert client-key)]
+    (cond-> {:url (url ctx path params query)
+             :method method
+             :insecure? (not client-cert?)
+             :as :text}
+      basic-auth? (assoc :basic-auth (new-basic-auth-token username password))
+      client-cert? (assoc :sslengine (new-ssl-engine ca-cert client-cert client-key))
+      body (assoc :body (json/write-str body)
+                  :headers  {"Content-Type" ct}))))
+
+(defn request [ctx opts]
+  (let [c (chan)]
+    (http/request (request-opts ctx opts) #(go (>! c (parse-response %))))
     c))
