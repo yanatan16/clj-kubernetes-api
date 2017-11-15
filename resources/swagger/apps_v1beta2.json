@@ -1,19 +1,19 @@
 {
   "swaggerVersion": "1.2",
-  "apiVersion": "apps/v1beta1",
+  "apiVersion": "apps/v1beta2",
   "basePath": "https://10.10.10.10:6443",
-  "resourcePath": "/apis/apps/v1beta1",
+  "resourcePath": "/apis/apps/v1beta2",
   "info": {
    "title": "",
    "description": ""
   },
   "apis": [
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/controllerrevisions",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/controllerrevisions",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.ControllerRevisionList",
+      "type": "v1beta2.ControllerRevisionList",
       "method": "GET",
       "summary": "list or watch objects of kind ControllerRevision",
       "nickname": "listNamespacedControllerRevision",
@@ -103,7 +103,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.ControllerRevisionList"
+        "responseModel": "v1beta2.ControllerRevisionList"
        }
       ],
       "produces": [
@@ -118,7 +118,7 @@
       ]
      },
      {
-      "type": "v1beta1.ControllerRevision",
+      "type": "v1beta2.ControllerRevision",
       "method": "POST",
       "summary": "create a ControllerRevision",
       "nickname": "createNamespacedControllerRevision",
@@ -132,7 +132,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.ControllerRevision",
+        "type": "v1beta2.ControllerRevision",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -152,7 +152,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.ControllerRevision"
+        "responseModel": "v1beta2.ControllerRevision"
        }
       ],
       "produces": [
@@ -270,8 +270,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/namespaces/{namespace}/controllerrevisions",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/controllerrevisions",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -381,11 +381,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/controllerrevisions/{name}",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/controllerrevisions/{name}",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.ControllerRevision",
+      "type": "v1beta2.ControllerRevision",
       "method": "GET",
       "summary": "read the specified ControllerRevision",
       "nickname": "readNamespacedControllerRevision",
@@ -435,7 +435,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.ControllerRevision"
+        "responseModel": "v1beta2.ControllerRevision"
        }
       ],
       "produces": [
@@ -448,7 +448,7 @@
       ]
      },
      {
-      "type": "v1beta1.ControllerRevision",
+      "type": "v1beta2.ControllerRevision",
       "method": "PUT",
       "summary": "replace the specified ControllerRevision",
       "nickname": "replaceNamespacedControllerRevision",
@@ -462,7 +462,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.ControllerRevision",
+        "type": "v1beta2.ControllerRevision",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -490,7 +490,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.ControllerRevision"
+        "responseModel": "v1beta2.ControllerRevision"
        }
       ],
       "produces": [
@@ -503,7 +503,7 @@
       ]
      },
      {
-      "type": "v1beta1.ControllerRevision",
+      "type": "v1beta2.ControllerRevision",
       "method": "PATCH",
       "summary": "partially update the specified ControllerRevision",
       "nickname": "patchNamespacedControllerRevision",
@@ -545,7 +545,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.ControllerRevision"
+        "responseModel": "v1beta2.ControllerRevision"
        }
       ],
       "produces": [
@@ -641,8 +641,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/namespaces/{namespace}/controllerrevisions/{name}",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/controllerrevisions/{name}",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -760,11 +760,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/controllerrevisions",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/controllerrevisions",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.ControllerRevisionList",
+      "type": "v1beta2.ControllerRevisionList",
       "method": "GET",
       "summary": "list or watch objects of kind ControllerRevision",
       "nickname": "listControllerRevisionForAllNamespaces",
@@ -846,7 +846,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.ControllerRevisionList"
+        "responseModel": "v1beta2.ControllerRevisionList"
        }
       ],
       "produces": [
@@ -863,8 +863,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/controllerrevisions",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/controllerrevisions",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -966,11 +966,1133 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/deployments",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/daemonsets",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.DeploymentList",
+      "type": "v1beta2.DaemonSetList",
+      "method": "GET",
+      "summary": "list or watch objects of kind DaemonSet",
+      "nickname": "listNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSetList"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.DaemonSet",
+      "method": "POST",
+      "summary": "create a DaemonSet",
+      "nickname": "createNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1beta2.DaemonSet",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1.Status",
+      "method": "DELETE",
+      "summary": "delete collection of DaemonSet",
+      "nickname": "deletecollectionNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.Status"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/daemonsets",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1.WatchEvent",
+      "method": "GET",
+      "summary": "watch individual changes to a list of DaemonSet",
+      "nickname": "watchNamespacedDaemonSetList",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.WatchEvent"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/daemonsets/{name}",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.DaemonSet",
+      "method": "GET",
+      "summary": "read the specified DaemonSet",
+      "nickname": "readNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "export",
+        "description": "Should this value be exported.  Export strips fields that a user can not specify.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "exact",
+        "description": "Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.DaemonSet",
+      "method": "PUT",
+      "summary": "replace the specified DaemonSet",
+      "nickname": "replaceNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1beta2.DaemonSet",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.DaemonSet",
+      "method": "PATCH",
+      "summary": "partially update the specified DaemonSet",
+      "nickname": "patchNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1.Patch",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "application/json-patch+json",
+       "application/merge-patch+json",
+       "application/strategic-merge-patch+json"
+      ]
+     },
+     {
+      "type": "v1.Status",
+      "method": "DELETE",
+      "summary": "delete a DaemonSet",
+      "nickname": "deleteNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1.DeleteOptions",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "gracePeriodSeconds",
+        "description": "The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "orphanDependents",
+        "description": "Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "propagationPolicy",
+        "description": "Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.Status"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/daemonsets/{name}",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1.WatchEvent",
+      "method": "GET",
+      "summary": "watch changes to an object of kind DaemonSet",
+      "nickname": "watchNamespacedDaemonSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.WatchEvent"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/daemonsets",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.DaemonSetList",
+      "method": "GET",
+      "summary": "list or watch objects of kind DaemonSet",
+      "nickname": "listDaemonSetForAllNamespaces",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSetList"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/watch/daemonsets",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1.WatchEvent",
+      "method": "GET",
+      "summary": "watch individual changes to a list of DaemonSet",
+      "nickname": "watchDaemonSetListForAllNamespaces",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.WatchEvent"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/daemonsets/{name}/status",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.DaemonSet",
+      "method": "GET",
+      "summary": "read status of the specified DaemonSet",
+      "nickname": "readNamespacedDaemonSetStatus",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.DaemonSet",
+      "method": "PUT",
+      "summary": "replace status of the specified DaemonSet",
+      "nickname": "replaceNamespacedDaemonSetStatus",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1beta2.DaemonSet",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.DaemonSet",
+      "method": "PATCH",
+      "summary": "partially update status of the specified DaemonSet",
+      "nickname": "patchNamespacedDaemonSetStatus",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1.Patch",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the DaemonSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.DaemonSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "application/json-patch+json",
+       "application/merge-patch+json",
+       "application/strategic-merge-patch+json"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/deployments",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.DeploymentList",
       "method": "GET",
       "summary": "list or watch objects of kind Deployment",
       "nickname": "listNamespacedDeployment",
@@ -1060,7 +2182,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.DeploymentList"
+        "responseModel": "v1beta2.DeploymentList"
        }
       ],
       "produces": [
@@ -1075,7 +2197,7 @@
       ]
      },
      {
-      "type": "v1beta1.Deployment",
+      "type": "v1beta2.Deployment",
       "method": "POST",
       "summary": "create a Deployment",
       "nickname": "createNamespacedDeployment",
@@ -1089,7 +2211,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.Deployment",
+        "type": "v1beta2.Deployment",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -1109,7 +2231,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Deployment"
+        "responseModel": "v1beta2.Deployment"
        }
       ],
       "produces": [
@@ -1227,8 +2349,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/namespaces/{namespace}/deployments",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/deployments",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -1338,11 +2460,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/deployments/{name}",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/deployments/{name}",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.Deployment",
+      "type": "v1beta2.Deployment",
       "method": "GET",
       "summary": "read the specified Deployment",
       "nickname": "readNamespacedDeployment",
@@ -1392,7 +2514,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Deployment"
+        "responseModel": "v1beta2.Deployment"
        }
       ],
       "produces": [
@@ -1405,7 +2527,7 @@
       ]
      },
      {
-      "type": "v1beta1.Deployment",
+      "type": "v1beta2.Deployment",
       "method": "PUT",
       "summary": "replace the specified Deployment",
       "nickname": "replaceNamespacedDeployment",
@@ -1419,7 +2541,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.Deployment",
+        "type": "v1beta2.Deployment",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -1447,7 +2569,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Deployment"
+        "responseModel": "v1beta2.Deployment"
        }
       ],
       "produces": [
@@ -1460,7 +2582,7 @@
       ]
      },
      {
-      "type": "v1beta1.Deployment",
+      "type": "v1beta2.Deployment",
       "method": "PATCH",
       "summary": "partially update the specified Deployment",
       "nickname": "patchNamespacedDeployment",
@@ -1502,7 +2624,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Deployment"
+        "responseModel": "v1beta2.Deployment"
        }
       ],
       "produces": [
@@ -1598,8 +2720,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/namespaces/{namespace}/deployments/{name}",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/deployments/{name}",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -1717,11 +2839,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/deployments",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/deployments",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.DeploymentList",
+      "type": "v1beta2.DeploymentList",
       "method": "GET",
       "summary": "list or watch objects of kind Deployment",
       "nickname": "listDeploymentForAllNamespaces",
@@ -1803,7 +2925,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.DeploymentList"
+        "responseModel": "v1beta2.DeploymentList"
        }
       ],
       "produces": [
@@ -1820,8 +2942,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/deployments",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/deployments",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -1923,72 +3045,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/deployments/{name}/rollback",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/deployments/{name}/scale",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.DeploymentRollback",
-      "method": "POST",
-      "summary": "create rollback of a Deployment",
-      "nickname": "createNamespacedDeploymentRollback",
-      "parameters": [
-       {
-        "type": "string",
-        "paramType": "query",
-        "name": "pretty",
-        "description": "If 'true', then the output is pretty printed.",
-        "required": false,
-        "allowMultiple": false
-       },
-       {
-        "type": "v1beta1.DeploymentRollback",
-        "paramType": "body",
-        "name": "body",
-        "description": "",
-        "required": true,
-        "allowMultiple": false
-       },
-       {
-        "type": "string",
-        "paramType": "path",
-        "name": "namespace",
-        "description": "object name and auth scope, such as for teams and projects",
-        "required": true,
-        "allowMultiple": false
-       },
-       {
-        "type": "string",
-        "paramType": "path",
-        "name": "name",
-        "description": "name of the DeploymentRollback",
-        "required": true,
-        "allowMultiple": false
-       }
-      ],
-      "responseMessages": [
-       {
-        "code": 200,
-        "message": "OK",
-        "responseModel": "v1beta1.DeploymentRollback"
-       }
-      ],
-      "produces": [
-       "application/json",
-       "application/yaml",
-       "application/vnd.kubernetes.protobuf"
-      ],
-      "consumes": [
-       "*/*"
-      ]
-     }
-    ]
-   },
-   {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/deployments/{name}/scale",
-    "description": "API at /apis/apps/v1beta1",
-    "operations": [
-     {
-      "type": "v1beta1.Scale",
+      "type": "v1beta2.Scale",
       "method": "GET",
       "summary": "read scale of the specified Deployment",
       "nickname": "readNamespacedDeploymentScale",
@@ -2022,7 +3083,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Scale"
+        "responseModel": "v1beta2.Scale"
        }
       ],
       "produces": [
@@ -2035,7 +3096,7 @@
       ]
      },
      {
-      "type": "v1beta1.Scale",
+      "type": "v1beta2.Scale",
       "method": "PUT",
       "summary": "replace scale of the specified Deployment",
       "nickname": "replaceNamespacedDeploymentScale",
@@ -2049,7 +3110,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.Scale",
+        "type": "v1beta2.Scale",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -2077,7 +3138,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Scale"
+        "responseModel": "v1beta2.Scale"
        }
       ],
       "produces": [
@@ -2090,7 +3151,7 @@
       ]
      },
      {
-      "type": "v1beta1.Scale",
+      "type": "v1beta2.Scale",
       "method": "PATCH",
       "summary": "partially update scale of the specified Deployment",
       "nickname": "patchNamespacedDeploymentScale",
@@ -2132,7 +3193,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Scale"
+        "responseModel": "v1beta2.Scale"
        }
       ],
       "produces": [
@@ -2149,11 +3210,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/deployments/{name}/status",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/deployments/{name}/status",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.Deployment",
+      "type": "v1beta2.Deployment",
       "method": "GET",
       "summary": "read status of the specified Deployment",
       "nickname": "readNamespacedDeploymentStatus",
@@ -2187,7 +3248,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Deployment"
+        "responseModel": "v1beta2.Deployment"
        }
       ],
       "produces": [
@@ -2200,7 +3261,7 @@
       ]
      },
      {
-      "type": "v1beta1.Deployment",
+      "type": "v1beta2.Deployment",
       "method": "PUT",
       "summary": "replace status of the specified Deployment",
       "nickname": "replaceNamespacedDeploymentStatus",
@@ -2214,7 +3275,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.Deployment",
+        "type": "v1beta2.Deployment",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -2242,7 +3303,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Deployment"
+        "responseModel": "v1beta2.Deployment"
        }
       ],
       "produces": [
@@ -2255,7 +3316,7 @@
       ]
      },
      {
-      "type": "v1beta1.Deployment",
+      "type": "v1beta2.Deployment",
       "method": "PATCH",
       "summary": "partially update status of the specified Deployment",
       "nickname": "patchNamespacedDeploymentStatus",
@@ -2297,7 +3358,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Deployment"
+        "responseModel": "v1beta2.Deployment"
        }
       ],
       "produces": [
@@ -2314,11 +3375,1298 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/statefulsets",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/replicasets",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.StatefulSetList",
+      "type": "v1beta2.ReplicaSetList",
+      "method": "GET",
+      "summary": "list or watch objects of kind ReplicaSet",
+      "nickname": "listNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSetList"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.ReplicaSet",
+      "method": "POST",
+      "summary": "create a ReplicaSet",
+      "nickname": "createNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1beta2.ReplicaSet",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1.Status",
+      "method": "DELETE",
+      "summary": "delete collection of ReplicaSet",
+      "nickname": "deletecollectionNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.Status"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/replicasets",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1.WatchEvent",
+      "method": "GET",
+      "summary": "watch individual changes to a list of ReplicaSet",
+      "nickname": "watchNamespacedReplicaSetList",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.WatchEvent"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/replicasets/{name}",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.ReplicaSet",
+      "method": "GET",
+      "summary": "read the specified ReplicaSet",
+      "nickname": "readNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "export",
+        "description": "Should this value be exported.  Export strips fields that a user can not specify.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "exact",
+        "description": "Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.ReplicaSet",
+      "method": "PUT",
+      "summary": "replace the specified ReplicaSet",
+      "nickname": "replaceNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1beta2.ReplicaSet",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.ReplicaSet",
+      "method": "PATCH",
+      "summary": "partially update the specified ReplicaSet",
+      "nickname": "patchNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1.Patch",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "application/json-patch+json",
+       "application/merge-patch+json",
+       "application/strategic-merge-patch+json"
+      ]
+     },
+     {
+      "type": "v1.Status",
+      "method": "DELETE",
+      "summary": "delete a ReplicaSet",
+      "nickname": "deleteNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1.DeleteOptions",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "gracePeriodSeconds",
+        "description": "The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "orphanDependents",
+        "description": "Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "propagationPolicy",
+        "description": "Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.Status"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/replicasets/{name}",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1.WatchEvent",
+      "method": "GET",
+      "summary": "watch changes to an object of kind ReplicaSet",
+      "nickname": "watchNamespacedReplicaSet",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.WatchEvent"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/replicasets",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.ReplicaSetList",
+      "method": "GET",
+      "summary": "list or watch objects of kind ReplicaSet",
+      "nickname": "listReplicaSetForAllNamespaces",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSetList"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/watch/replicasets",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1.WatchEvent",
+      "method": "GET",
+      "summary": "watch individual changes to a list of ReplicaSet",
+      "nickname": "watchReplicaSetListForAllNamespaces",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "labelSelector",
+        "description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "fieldSelector",
+        "description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "includeUninitialized",
+        "description": "If true, partially initialized resources are included in the response.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "boolean",
+        "paramType": "query",
+        "name": "watch",
+        "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "resourceVersion",
+        "description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "timeoutSeconds",
+        "description": "Timeout for the list/watch call.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "integer",
+        "paramType": "query",
+        "name": "limit",
+        "description": "limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.\n\nThe server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "continue",
+        "description": "The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.",
+        "required": false,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1.WatchEvent"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf",
+       "application/json;stream=watch",
+       "application/vnd.kubernetes.protobuf;stream=watch"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/replicasets/{name}/scale",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.Scale",
+      "method": "GET",
+      "summary": "read scale of the specified ReplicaSet",
+      "nickname": "readNamespacedReplicaSetScale",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the Scale",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.Scale"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.Scale",
+      "method": "PUT",
+      "summary": "replace scale of the specified ReplicaSet",
+      "nickname": "replaceNamespacedReplicaSetScale",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1beta2.Scale",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the Scale",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.Scale"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.Scale",
+      "method": "PATCH",
+      "summary": "partially update scale of the specified ReplicaSet",
+      "nickname": "patchNamespacedReplicaSetScale",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1.Patch",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the Scale",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.Scale"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "application/json-patch+json",
+       "application/merge-patch+json",
+       "application/strategic-merge-patch+json"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/replicasets/{name}/status",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.ReplicaSet",
+      "method": "GET",
+      "summary": "read status of the specified ReplicaSet",
+      "nickname": "readNamespacedReplicaSetStatus",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.ReplicaSet",
+      "method": "PUT",
+      "summary": "replace status of the specified ReplicaSet",
+      "nickname": "replaceNamespacedReplicaSetStatus",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1beta2.ReplicaSet",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "*/*"
+      ]
+     },
+     {
+      "type": "v1beta2.ReplicaSet",
+      "method": "PATCH",
+      "summary": "partially update status of the specified ReplicaSet",
+      "nickname": "patchNamespacedReplicaSetStatus",
+      "parameters": [
+       {
+        "type": "string",
+        "paramType": "query",
+        "name": "pretty",
+        "description": "If 'true', then the output is pretty printed.",
+        "required": false,
+        "allowMultiple": false
+       },
+       {
+        "type": "v1.Patch",
+        "paramType": "body",
+        "name": "body",
+        "description": "",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "namespace",
+        "description": "object name and auth scope, such as for teams and projects",
+        "required": true,
+        "allowMultiple": false
+       },
+       {
+        "type": "string",
+        "paramType": "path",
+        "name": "name",
+        "description": "name of the ReplicaSet",
+        "required": true,
+        "allowMultiple": false
+       }
+      ],
+      "responseMessages": [
+       {
+        "code": 200,
+        "message": "OK",
+        "responseModel": "v1beta2.ReplicaSet"
+       }
+      ],
+      "produces": [
+       "application/json",
+       "application/yaml",
+       "application/vnd.kubernetes.protobuf"
+      ],
+      "consumes": [
+       "application/json-patch+json",
+       "application/merge-patch+json",
+       "application/strategic-merge-patch+json"
+      ]
+     }
+    ]
+   },
+   {
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/statefulsets",
+    "description": "API at /apis/apps/v1beta2",
+    "operations": [
+     {
+      "type": "v1beta2.StatefulSetList",
       "method": "GET",
       "summary": "list or watch objects of kind StatefulSet",
       "nickname": "listNamespacedStatefulSet",
@@ -2408,7 +4756,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSetList"
+        "responseModel": "v1beta2.StatefulSetList"
        }
       ],
       "produces": [
@@ -2423,7 +4771,7 @@
       ]
      },
      {
-      "type": "v1beta1.StatefulSet",
+      "type": "v1beta2.StatefulSet",
       "method": "POST",
       "summary": "create a StatefulSet",
       "nickname": "createNamespacedStatefulSet",
@@ -2437,7 +4785,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.StatefulSet",
+        "type": "v1beta2.StatefulSet",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -2457,7 +4805,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSet"
+        "responseModel": "v1beta2.StatefulSet"
        }
       ],
       "produces": [
@@ -2575,8 +4923,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/namespaces/{namespace}/statefulsets",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/statefulsets",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -2686,11 +5034,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/statefulsets/{name}",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/statefulsets/{name}",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.StatefulSet",
+      "type": "v1beta2.StatefulSet",
       "method": "GET",
       "summary": "read the specified StatefulSet",
       "nickname": "readNamespacedStatefulSet",
@@ -2740,7 +5088,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSet"
+        "responseModel": "v1beta2.StatefulSet"
        }
       ],
       "produces": [
@@ -2753,7 +5101,7 @@
       ]
      },
      {
-      "type": "v1beta1.StatefulSet",
+      "type": "v1beta2.StatefulSet",
       "method": "PUT",
       "summary": "replace the specified StatefulSet",
       "nickname": "replaceNamespacedStatefulSet",
@@ -2767,7 +5115,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.StatefulSet",
+        "type": "v1beta2.StatefulSet",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -2795,7 +5143,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSet"
+        "responseModel": "v1beta2.StatefulSet"
        }
       ],
       "produces": [
@@ -2808,7 +5156,7 @@
       ]
      },
      {
-      "type": "v1beta1.StatefulSet",
+      "type": "v1beta2.StatefulSet",
       "method": "PATCH",
       "summary": "partially update the specified StatefulSet",
       "nickname": "patchNamespacedStatefulSet",
@@ -2850,7 +5198,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSet"
+        "responseModel": "v1beta2.StatefulSet"
        }
       ],
       "produces": [
@@ -2946,8 +5294,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/namespaces/{namespace}/statefulsets/{name}",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/namespaces/{namespace}/statefulsets/{name}",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -3065,11 +5413,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/statefulsets",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/statefulsets",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.StatefulSetList",
+      "type": "v1beta2.StatefulSetList",
       "method": "GET",
       "summary": "list or watch objects of kind StatefulSet",
       "nickname": "listStatefulSetForAllNamespaces",
@@ -3151,7 +5499,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSetList"
+        "responseModel": "v1beta2.StatefulSetList"
        }
       ],
       "produces": [
@@ -3168,8 +5516,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/watch/statefulsets",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/watch/statefulsets",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.WatchEvent",
@@ -3271,11 +5619,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/statefulsets/{name}/scale",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/statefulsets/{name}/scale",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.Scale",
+      "type": "v1beta2.Scale",
       "method": "GET",
       "summary": "read scale of the specified StatefulSet",
       "nickname": "readNamespacedStatefulSetScale",
@@ -3309,7 +5657,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Scale"
+        "responseModel": "v1beta2.Scale"
        }
       ],
       "produces": [
@@ -3322,7 +5670,7 @@
       ]
      },
      {
-      "type": "v1beta1.Scale",
+      "type": "v1beta2.Scale",
       "method": "PUT",
       "summary": "replace scale of the specified StatefulSet",
       "nickname": "replaceNamespacedStatefulSetScale",
@@ -3336,7 +5684,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.Scale",
+        "type": "v1beta2.Scale",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -3364,7 +5712,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Scale"
+        "responseModel": "v1beta2.Scale"
        }
       ],
       "produces": [
@@ -3377,7 +5725,7 @@
       ]
      },
      {
-      "type": "v1beta1.Scale",
+      "type": "v1beta2.Scale",
       "method": "PATCH",
       "summary": "partially update scale of the specified StatefulSet",
       "nickname": "patchNamespacedStatefulSetScale",
@@ -3419,7 +5767,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.Scale"
+        "responseModel": "v1beta2.Scale"
        }
       ],
       "produces": [
@@ -3436,11 +5784,11 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1/namespaces/{namespace}/statefulsets/{name}/status",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2/namespaces/{namespace}/statefulsets/{name}/status",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
-      "type": "v1beta1.StatefulSet",
+      "type": "v1beta2.StatefulSet",
       "method": "GET",
       "summary": "read status of the specified StatefulSet",
       "nickname": "readNamespacedStatefulSetStatus",
@@ -3474,7 +5822,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSet"
+        "responseModel": "v1beta2.StatefulSet"
        }
       ],
       "produces": [
@@ -3487,7 +5835,7 @@
       ]
      },
      {
-      "type": "v1beta1.StatefulSet",
+      "type": "v1beta2.StatefulSet",
       "method": "PUT",
       "summary": "replace status of the specified StatefulSet",
       "nickname": "replaceNamespacedStatefulSetStatus",
@@ -3501,7 +5849,7 @@
         "allowMultiple": false
        },
        {
-        "type": "v1beta1.StatefulSet",
+        "type": "v1beta2.StatefulSet",
         "paramType": "body",
         "name": "body",
         "description": "",
@@ -3529,7 +5877,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSet"
+        "responseModel": "v1beta2.StatefulSet"
        }
       ],
       "produces": [
@@ -3542,7 +5890,7 @@
       ]
      },
      {
-      "type": "v1beta1.StatefulSet",
+      "type": "v1beta2.StatefulSet",
       "method": "PATCH",
       "summary": "partially update status of the specified StatefulSet",
       "nickname": "patchNamespacedStatefulSetStatus",
@@ -3584,7 +5932,7 @@
        {
         "code": 200,
         "message": "OK",
-        "responseModel": "v1beta1.StatefulSet"
+        "responseModel": "v1beta2.StatefulSet"
        }
       ],
       "produces": [
@@ -3601,8 +5949,8 @@
     ]
    },
    {
-    "path": "/apis/apps/v1beta1",
-    "description": "API at /apis/apps/v1beta1",
+    "path": "/apis/apps/v1beta2",
+    "description": "API at /apis/apps/v1beta2",
     "operations": [
      {
       "type": "v1.APIResourceList",
@@ -3625,8 +5973,8 @@
    }
   ],
   "models": {
-   "v1beta1.ControllerRevisionList": {
-    "id": "v1beta1.ControllerRevisionList",
+   "v1beta2.ControllerRevisionList": {
+    "id": "v1beta2.ControllerRevisionList",
     "description": "ControllerRevisionList is a resource containing a list of ControllerRevision objects.",
     "required": [
      "items"
@@ -3647,7 +5995,7 @@
      "items": {
       "type": "array",
       "items": {
-       "$ref": "v1beta1.ControllerRevision"
+       "$ref": "v1beta2.ControllerRevision"
       },
       "description": "Items is the list of ControllerRevisions"
      }
@@ -3671,9 +6019,9 @@
      }
     }
    },
-   "v1beta1.ControllerRevision": {
-    "id": "v1beta1.ControllerRevision",
-    "description": "DEPRECATED - This group version of ControllerRevision is deprecated by apps/v1beta2/ControllerRevision. See the release notes for more information. ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.",
+   "v1beta2.ControllerRevision": {
+    "id": "v1beta2.ControllerRevision",
+    "description": "ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.",
     "required": [
      "revision"
     ],
@@ -4008,9 +6356,9 @@
     "id": "v1.DeletionPropagation",
     "properties": {}
    },
-   "v1beta1.DeploymentList": {
-    "id": "v1beta1.DeploymentList",
-    "description": "DeploymentList is a list of Deployments.",
+   "v1beta2.DaemonSetList": {
+    "id": "v1beta2.DaemonSetList",
+    "description": "DaemonSetList is a collection of daemon sets.",
     "required": [
      "items"
     ],
@@ -4025,20 +6373,20 @@
      },
      "metadata": {
       "$ref": "v1.ListMeta",
-      "description": "Standard list metadata."
+      "description": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata"
      },
      "items": {
       "type": "array",
       "items": {
-       "$ref": "v1beta1.Deployment"
+       "$ref": "v1beta2.DaemonSet"
       },
-      "description": "Items is the list of Deployments."
+      "description": "A list of daemon sets."
      }
     }
    },
-   "v1beta1.Deployment": {
-    "id": "v1beta1.Deployment",
-    "description": "DEPRECATED - This group version of Deployment is deprecated by apps/v1beta2/Deployment. See the release notes for more information. Deployment enables declarative updates for Pods and ReplicaSets.",
+   "v1beta2.DaemonSet": {
+    "id": "v1beta2.DaemonSet",
+    "description": "DaemonSet represents the configuration of a daemon set.",
     "properties": {
      "kind": {
       "type": "string",
@@ -4050,64 +6398,46 @@
      },
      "metadata": {
       "$ref": "v1.ObjectMeta",
-      "description": "Standard object metadata."
+      "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata"
      },
      "spec": {
-      "$ref": "v1beta1.DeploymentSpec",
-      "description": "Specification of the desired behavior of the Deployment."
+      "$ref": "v1beta2.DaemonSetSpec",
+      "description": "The desired behavior of this daemon set. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
      },
      "status": {
-      "$ref": "v1beta1.DeploymentStatus",
-      "description": "Most recently observed status of the Deployment."
+      "$ref": "v1beta2.DaemonSetStatus",
+      "description": "The current status of this daemon set. This data may be out of date by some window of time. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
      }
     }
    },
-   "v1beta1.DeploymentSpec": {
-    "id": "v1beta1.DeploymentSpec",
-    "description": "DeploymentSpec is the specification of the desired behavior of the Deployment.",
+   "v1beta2.DaemonSetSpec": {
+    "id": "v1beta2.DaemonSetSpec",
+    "description": "DaemonSetSpec is the specification of a daemon set.",
     "required": [
      "template"
     ],
     "properties": {
-     "replicas": {
-      "type": "integer",
-      "format": "int32",
-      "description": "Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1."
-     },
      "selector": {
       "$ref": "v1.LabelSelector",
-      "description": "Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment."
+      "description": "A label query over pods that are managed by the daemon set. Must match in order to be controlled. If empty, defaulted to labels on Pod template. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors"
      },
      "template": {
       "$ref": "v1.PodTemplateSpec",
-      "description": "Template describes the pods that will be created."
+      "description": "An object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template"
      },
-     "strategy": {
-      "$ref": "v1beta1.DeploymentStrategy",
-      "description": "The deployment strategy to use to replace existing pods with new ones."
+     "updateStrategy": {
+      "$ref": "v1beta2.DaemonSetUpdateStrategy",
+      "description": "An update strategy to replace existing DaemonSet pods with new pods."
      },
      "minReadySeconds": {
       "type": "integer",
       "format": "int32",
-      "description": "Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)"
+      "description": "The minimum number of seconds for which a newly created DaemonSet pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)."
      },
      "revisionHistoryLimit": {
       "type": "integer",
       "format": "int32",
-      "description": "The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 2."
-     },
-     "paused": {
-      "type": "boolean",
-      "description": "Indicates that the deployment is paused."
-     },
-     "rollbackTo": {
-      "$ref": "v1beta1.RollbackConfig",
-      "description": "DEPRECATED. The config this deployment is rolling back to. Will be cleared after rollback is done."
-     },
-     "progressDeadlineSeconds": {
-      "type": "integer",
-      "format": "int32",
-      "description": "The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that progress will not be estimated during the time a deployment is paused. Defaults to 600s."
+      "description": "The number of old history to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10."
      }
     }
    },
@@ -6138,8 +8468,188 @@
      }
     }
    },
-   "v1beta1.DeploymentStrategy": {
-    "id": "v1beta1.DeploymentStrategy",
+   "v1beta2.DaemonSetUpdateStrategy": {
+    "id": "v1beta2.DaemonSetUpdateStrategy",
+    "description": "DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.",
+    "properties": {
+     "type": {
+      "type": "string",
+      "description": "Type of daemon set update. Can be \"RollingUpdate\" or \"OnDelete\". Default is RollingUpdate."
+     },
+     "rollingUpdate": {
+      "$ref": "v1beta2.RollingUpdateDaemonSet",
+      "description": "Rolling update config params. Present only if type = \"RollingUpdate\"."
+     }
+    }
+   },
+   "v1beta2.RollingUpdateDaemonSet": {
+    "id": "v1beta2.RollingUpdateDaemonSet",
+    "description": "Spec to control the desired behavior of daemon set rolling update.",
+    "properties": {
+     "maxUnavailable": {
+      "type": "string",
+      "description": "The maximum number of DaemonSet pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of total number of DaemonSet pods at the start of the update (ex: 10%). Absolute number is calculated from percentage by rounding up. This cannot be 0. Default value is 1. Example: when this is set to 30%, at most 30% of the total number of nodes that should be running the daemon pod (i.e. status.desiredNumberScheduled) can have their pods stopped for an update at any given time. The update starts by stopping at most 30% of those DaemonSet pods and then brings up new DaemonSet pods in their place. Once the new pods are available, it then proceeds onto other DaemonSet pods, thus ensuring that at least 70% of original number of DaemonSet pods are available at all times during the update."
+     }
+    }
+   },
+   "v1beta2.DaemonSetStatus": {
+    "id": "v1beta2.DaemonSetStatus",
+    "description": "DaemonSetStatus represents the current status of a daemon set.",
+    "required": [
+     "currentNumberScheduled",
+     "numberMisscheduled",
+     "desiredNumberScheduled",
+     "numberReady"
+    ],
+    "properties": {
+     "currentNumberScheduled": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of nodes that are running at least 1 daemon pod and are supposed to run the daemon pod. More info: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/"
+     },
+     "numberMisscheduled": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of nodes that are running the daemon pod, but are not supposed to run the daemon pod. More info: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/"
+     },
+     "desiredNumberScheduled": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The total number of nodes that should be running the daemon pod (including nodes correctly running the daemon pod). More info: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/"
+     },
+     "numberReady": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of nodes that should be running the daemon pod and have one or more of the daemon pod running and ready."
+     },
+     "observedGeneration": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The most recent generation observed by the daemon set controller."
+     },
+     "updatedNumberScheduled": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The total number of nodes that are running updated daemon pod"
+     },
+     "numberAvailable": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of nodes that should be running the daemon pod and have one or more of the daemon pod running and available (ready for at least spec.minReadySeconds)"
+     },
+     "numberUnavailable": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of nodes that should be running the daemon pod and have none of the daemon pod running and available (ready for at least spec.minReadySeconds)"
+     },
+     "collisionCount": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Count of hash collisions for the DaemonSet. The DaemonSet controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ControllerRevision."
+     }
+    }
+   },
+   "v1beta2.DeploymentList": {
+    "id": "v1beta2.DeploymentList",
+    "description": "DeploymentList is a list of Deployments.",
+    "required": [
+     "items"
+    ],
+    "properties": {
+     "kind": {
+      "type": "string",
+      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
+     },
+     "apiVersion": {
+      "type": "string",
+      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources"
+     },
+     "metadata": {
+      "$ref": "v1.ListMeta",
+      "description": "Standard list metadata."
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "$ref": "v1beta2.Deployment"
+      },
+      "description": "Items is the list of Deployments."
+     }
+    }
+   },
+   "v1beta2.Deployment": {
+    "id": "v1beta2.Deployment",
+    "description": "Deployment enables declarative updates for Pods and ReplicaSets.",
+    "properties": {
+     "kind": {
+      "type": "string",
+      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
+     },
+     "apiVersion": {
+      "type": "string",
+      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources"
+     },
+     "metadata": {
+      "$ref": "v1.ObjectMeta",
+      "description": "Standard object metadata."
+     },
+     "spec": {
+      "$ref": "v1beta2.DeploymentSpec",
+      "description": "Specification of the desired behavior of the Deployment."
+     },
+     "status": {
+      "$ref": "v1beta2.DeploymentStatus",
+      "description": "Most recently observed status of the Deployment."
+     }
+    }
+   },
+   "v1beta2.DeploymentSpec": {
+    "id": "v1beta2.DeploymentSpec",
+    "description": "DeploymentSpec is the specification of the desired behavior of the Deployment.",
+    "required": [
+     "template"
+    ],
+    "properties": {
+     "replicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1."
+     },
+     "selector": {
+      "$ref": "v1.LabelSelector",
+      "description": "Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment."
+     },
+     "template": {
+      "$ref": "v1.PodTemplateSpec",
+      "description": "Template describes the pods that will be created."
+     },
+     "strategy": {
+      "$ref": "v1beta2.DeploymentStrategy",
+      "description": "The deployment strategy to use to replace existing pods with new ones."
+     },
+     "minReadySeconds": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)"
+     },
+     "revisionHistoryLimit": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10."
+     },
+     "paused": {
+      "type": "boolean",
+      "description": "Indicates that the deployment is paused."
+     },
+     "progressDeadlineSeconds": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that progress will not be estimated during the time a deployment is paused. Defaults to 600s."
+     }
+    }
+   },
+   "v1beta2.DeploymentStrategy": {
+    "id": "v1beta2.DeploymentStrategy",
     "description": "DeploymentStrategy describes how to replace existing pods with new ones.",
     "properties": {
      "type": {
@@ -6147,13 +8657,13 @@
       "description": "Type of deployment. Can be \"Recreate\" or \"RollingUpdate\". Default is RollingUpdate."
      },
      "rollingUpdate": {
-      "$ref": "v1beta1.RollingUpdateDeployment",
+      "$ref": "v1beta2.RollingUpdateDeployment",
       "description": "Rolling update config params. Present only if DeploymentStrategyType = RollingUpdate."
      }
     }
    },
-   "v1beta1.RollingUpdateDeployment": {
-    "id": "v1beta1.RollingUpdateDeployment",
+   "v1beta2.RollingUpdateDeployment": {
+    "id": "v1beta2.RollingUpdateDeployment",
     "description": "Spec to control the desired behavior of rolling update.",
     "properties": {
      "maxUnavailable": {
@@ -6166,19 +8676,8 @@
      }
     }
    },
-   "v1beta1.RollbackConfig": {
-    "id": "v1beta1.RollbackConfig",
-    "description": "DEPRECATED.",
-    "properties": {
-     "revision": {
-      "type": "integer",
-      "format": "int64",
-      "description": "The revision to rollback to. If set to 0, rollback to the last revision."
-     }
-    }
-   },
-   "v1beta1.DeploymentStatus": {
-    "id": "v1beta1.DeploymentStatus",
+   "v1beta2.DeploymentStatus": {
+    "id": "v1beta2.DeploymentStatus",
     "description": "DeploymentStatus is the most recently observed status of the Deployment.",
     "properties": {
      "observedGeneration": {
@@ -6214,7 +8713,7 @@
      "conditions": {
       "type": "array",
       "items": {
-       "$ref": "v1beta1.DeploymentCondition"
+       "$ref": "v1beta2.DeploymentCondition"
       },
       "description": "Represents the latest available observations of a deployment's current state."
      },
@@ -6225,8 +8724,8 @@
      }
     }
    },
-   "v1beta1.DeploymentCondition": {
-    "id": "v1beta1.DeploymentCondition",
+   "v1beta2.DeploymentCondition": {
+    "id": "v1beta2.DeploymentCondition",
     "description": "DeploymentCondition describes the state of a deployment at a certain point.",
     "required": [
      "type",
@@ -6259,38 +8758,8 @@
      }
     }
    },
-   "v1beta1.DeploymentRollback": {
-    "id": "v1beta1.DeploymentRollback",
-    "description": "DEPRECATED. DeploymentRollback stores the information required to rollback a deployment.",
-    "required": [
-     "name",
-     "rollbackTo"
-    ],
-    "properties": {
-     "kind": {
-      "type": "string",
-      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
-     },
-     "apiVersion": {
-      "type": "string",
-      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources"
-     },
-     "name": {
-      "type": "string",
-      "description": "Required: This must match the Name of a deployment."
-     },
-     "updatedAnnotations": {
-      "type": "object",
-      "description": "The annotations to be updated to a deployment"
-     },
-     "rollbackTo": {
-      "$ref": "v1beta1.RollbackConfig",
-      "description": "The config of this deployment rollback."
-     }
-    }
-   },
-   "v1beta1.Scale": {
-    "id": "v1beta1.Scale",
+   "v1beta2.Scale": {
+    "id": "v1beta2.Scale",
     "description": "Scale represents a scaling request for a resource.",
     "properties": {
      "kind": {
@@ -6306,17 +8775,17 @@
       "description": "Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata."
      },
      "spec": {
-      "$ref": "v1beta1.ScaleSpec",
+      "$ref": "v1beta2.ScaleSpec",
       "description": "defines the behavior of the scale. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status."
      },
      "status": {
-      "$ref": "v1beta1.ScaleStatus",
+      "$ref": "v1beta2.ScaleStatus",
       "description": "current status of the scale. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status. Read-only."
      }
     }
    },
-   "v1beta1.ScaleSpec": {
-    "id": "v1beta1.ScaleSpec",
+   "v1beta2.ScaleSpec": {
+    "id": "v1beta2.ScaleSpec",
     "description": "ScaleSpec describes the attributes of a scale subresource",
     "properties": {
      "replicas": {
@@ -6326,8 +8795,8 @@
      }
     }
    },
-   "v1beta1.ScaleStatus": {
-    "id": "v1beta1.ScaleStatus",
+   "v1beta2.ScaleStatus": {
+    "id": "v1beta2.ScaleStatus",
     "description": "ScaleStatus represents the current status of a scale subresource.",
     "required": [
      "replicas"
@@ -6348,8 +8817,157 @@
      }
     }
    },
-   "v1beta1.StatefulSetList": {
-    "id": "v1beta1.StatefulSetList",
+   "v1beta2.ReplicaSetList": {
+    "id": "v1beta2.ReplicaSetList",
+    "description": "ReplicaSetList is a collection of ReplicaSets.",
+    "required": [
+     "items"
+    ],
+    "properties": {
+     "kind": {
+      "type": "string",
+      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
+     },
+     "apiVersion": {
+      "type": "string",
+      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources"
+     },
+     "metadata": {
+      "$ref": "v1.ListMeta",
+      "description": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "$ref": "v1beta2.ReplicaSet"
+      },
+      "description": "List of ReplicaSets. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller"
+     }
+    }
+   },
+   "v1beta2.ReplicaSet": {
+    "id": "v1beta2.ReplicaSet",
+    "description": "ReplicaSet represents the configuration of a ReplicaSet.",
+    "properties": {
+     "kind": {
+      "type": "string",
+      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
+     },
+     "apiVersion": {
+      "type": "string",
+      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources"
+     },
+     "metadata": {
+      "$ref": "v1.ObjectMeta",
+      "description": "If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata"
+     },
+     "spec": {
+      "$ref": "v1beta2.ReplicaSetSpec",
+      "description": "Spec defines the specification of the desired behavior of the ReplicaSet. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
+     },
+     "status": {
+      "$ref": "v1beta2.ReplicaSetStatus",
+      "description": "Status is the most recently observed status of the ReplicaSet. This data may be out of date by some window of time. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
+     }
+    }
+   },
+   "v1beta2.ReplicaSetSpec": {
+    "id": "v1beta2.ReplicaSetSpec",
+    "description": "ReplicaSetSpec is the specification of a ReplicaSet.",
+    "properties": {
+     "replicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Replicas is the number of desired replicas. This is a pointer to distinguish between explicit zero and unspecified. Defaults to 1. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-replicationcontroller"
+     },
+     "minReadySeconds": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)"
+     },
+     "selector": {
+      "$ref": "v1.LabelSelector",
+      "description": "Selector is a label query over pods that should match the replica count. If the selector is empty, it is defaulted to the labels present on the pod template. Label keys and values that must match in order to be controlled by this replica set. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors"
+     },
+     "template": {
+      "$ref": "v1.PodTemplateSpec",
+      "description": "Template is the object that describes the pod that will be created if insufficient replicas are detected. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template"
+     }
+    }
+   },
+   "v1beta2.ReplicaSetStatus": {
+    "id": "v1beta2.ReplicaSetStatus",
+    "description": "ReplicaSetStatus represents the current status of a ReplicaSet.",
+    "required": [
+     "replicas"
+    ],
+    "properties": {
+     "replicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Replicas is the most recently oberved number of replicas. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-replicationcontroller"
+     },
+     "fullyLabeledReplicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of pods that have labels matching the labels of the pod template of the replicaset."
+     },
+     "readyReplicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of ready replicas for this replica set."
+     },
+     "availableReplicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The number of available replicas (ready for at least minReadySeconds) for this replica set."
+     },
+     "observedGeneration": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ObservedGeneration reflects the generation of the most recently observed ReplicaSet."
+     },
+     "conditions": {
+      "type": "array",
+      "items": {
+       "$ref": "v1beta2.ReplicaSetCondition"
+      },
+      "description": "Represents the latest available observations of a replica set's current state."
+     }
+    }
+   },
+   "v1beta2.ReplicaSetCondition": {
+    "id": "v1beta2.ReplicaSetCondition",
+    "description": "ReplicaSetCondition describes the state of a replica set at a certain point.",
+    "required": [
+     "type",
+     "status"
+    ],
+    "properties": {
+     "type": {
+      "type": "string",
+      "description": "Type of replica set condition."
+     },
+     "status": {
+      "type": "string",
+      "description": "Status of the condition, one of True, False, Unknown."
+     },
+     "lastTransitionTime": {
+      "type": "string",
+      "description": "The last time the condition transitioned from one status to another."
+     },
+     "reason": {
+      "type": "string",
+      "description": "The reason for the condition's last transition."
+     },
+     "message": {
+      "type": "string",
+      "description": "A human readable message indicating details about the transition."
+     }
+    }
+   },
+   "v1beta2.StatefulSetList": {
+    "id": "v1beta2.StatefulSetList",
     "description": "StatefulSetList is a collection of StatefulSets.",
     "required": [
      "items"
@@ -6369,14 +8987,14 @@
      "items": {
       "type": "array",
       "items": {
-       "$ref": "v1beta1.StatefulSet"
+       "$ref": "v1beta2.StatefulSet"
       }
      }
     }
    },
-   "v1beta1.StatefulSet": {
-    "id": "v1beta1.StatefulSet",
-    "description": "DEPRECATED - This group version of StatefulSet is deprecated by apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:\n - Network: A single stable DNS and hostname.\n - Storage: As many VolumeClaims as requested.\nThe StatefulSet guarantees that a given network identity will always map to the same storage identity.",
+   "v1beta2.StatefulSet": {
+    "id": "v1beta2.StatefulSet",
+    "description": "StatefulSet represents a set of pods with consistent identities. Identities are defined as:\n - Network: A single stable DNS and hostname.\n - Storage: As many VolumeClaims as requested.\nThe StatefulSet guarantees that a given network identity will always map to the same storage identity.",
     "properties": {
      "kind": {
       "type": "string",
@@ -6390,17 +9008,17 @@
       "$ref": "v1.ObjectMeta"
      },
      "spec": {
-      "$ref": "v1beta1.StatefulSetSpec",
+      "$ref": "v1beta2.StatefulSetSpec",
       "description": "Spec defines the desired identities of pods in this set."
      },
      "status": {
-      "$ref": "v1beta1.StatefulSetStatus",
+      "$ref": "v1beta2.StatefulSetStatus",
       "description": "Status is the current status of Pods in this StatefulSet. This data may be out of date by some window of time."
      }
     }
    },
-   "v1beta1.StatefulSetSpec": {
-    "id": "v1beta1.StatefulSetSpec",
+   "v1beta2.StatefulSetSpec": {
+    "id": "v1beta2.StatefulSetSpec",
     "description": "A StatefulSetSpec is the specification of a StatefulSet.",
     "required": [
      "template",
@@ -6436,7 +9054,7 @@
       "description": "podManagementPolicy controls how pods are created during initial scale up, when replacing pods on nodes, or when scaling down. The default policy is `OrderedReady`, where pods are created in increasing order (pod-0, then pod-1, etc) and the controller will wait until each pod is ready before continuing. When scaling down, the pods are removed in the opposite order. The alternative policy is `Parallel` which will create pods in parallel to match the desired scale without waiting, and on scale down will delete all pods at once."
      },
      "updateStrategy": {
-      "$ref": "v1beta1.StatefulSetUpdateStrategy",
+      "$ref": "v1beta2.StatefulSetUpdateStrategy",
       "description": "updateStrategy indicates the StatefulSetUpdateStrategy that will be employed to update Pods in the StatefulSet when a revision is made to Template."
      },
      "revisionHistoryLimit": {
@@ -6565,33 +9183,33 @@
      }
     }
    },
-   "v1beta1.StatefulSetUpdateStrategy": {
-    "id": "v1beta1.StatefulSetUpdateStrategy",
+   "v1beta2.StatefulSetUpdateStrategy": {
+    "id": "v1beta2.StatefulSetUpdateStrategy",
     "description": "StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.",
     "properties": {
      "type": {
       "type": "string",
-      "description": "Type indicates the type of the StatefulSetUpdateStrategy."
+      "description": "Type indicates the type of the StatefulSetUpdateStrategy. Default is RollingUpdate."
      },
      "rollingUpdate": {
-      "$ref": "v1beta1.RollingUpdateStatefulSetStrategy",
+      "$ref": "v1beta2.RollingUpdateStatefulSetStrategy",
       "description": "RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType."
      }
     }
    },
-   "v1beta1.RollingUpdateStatefulSetStrategy": {
-    "id": "v1beta1.RollingUpdateStatefulSetStrategy",
+   "v1beta2.RollingUpdateStatefulSetStrategy": {
+    "id": "v1beta2.RollingUpdateStatefulSetStrategy",
     "description": "RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.",
     "properties": {
      "partition": {
       "type": "integer",
       "format": "int32",
-      "description": "Partition indicates the ordinal at which the StatefulSet should be partitioned."
+      "description": "Partition indicates the ordinal at which the StatefulSet should be partitioned. Default value is 0."
      }
     }
    },
-   "v1beta1.StatefulSetStatus": {
-    "id": "v1beta1.StatefulSetStatus",
+   "v1beta2.StatefulSetStatus": {
+    "id": "v1beta2.StatefulSetStatus",
     "description": "StatefulSetStatus represents the current state of a StatefulSet.",
     "required": [
      "replicas"
