@@ -18,7 +18,8 @@
 (def stateful-set {:apiVersion "apps/v1beta1"
                    :kind       "StatefulSet"
                    :metadata   {:name stateful-set-name}
-                   :spec       {:template {:metadata {:labels {:service "service"}}
+                   :spec       {:selector {:matchLabels {:service "service"}}
+                                :template {:metadata {:labels {:service "service"}}
                                            :spec     {:containers [{:name  "kafka"
                                                                     :image "kafka"}]}}}})
 
@@ -44,9 +45,6 @@
   (testing "reading single stateful-set"
     (let [{:keys[kind metadata]} (<!! (a-v1beta1/read-namespaced-stateful-set ctx (assoc nsopt :name stateful-set-name)))]
       (is (= kind "StatefulSet"))
-      (is (= (:name metadata) stateful-set-name))))
+      (is (= (:name metadata) stateful-set-name)))))
 
-  (testing "deleting stateful-set"
-    (let [_ (<!! (a-v1beta1/delete-namespaced-stateful-set ctx {} (assoc nsopt :name stateful-set-name)))
-          {:keys [reason]} (<!! (a-v1beta1/read-namespaced-stateful-set ctx (assoc nsopt :name stateful-set-name)))]
-      (is (= "NotFound" reason)))))
+; Removed deletion test due to resources getting orphan

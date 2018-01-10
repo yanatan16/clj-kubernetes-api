@@ -5,8 +5,9 @@
             [clojure.data.json :as json]
             [less.awful.ssl :as ssl]))
 
-(defn make-context [server opts]
-  (merge {:server server} opts))
+(defn make-context
+  ([server] (make-context server {}))
+  ([server opts] (merge {:server server} opts)))
 
 (defn- parameterize-path [path params]
   (reduce-kv (fn [s k v]
