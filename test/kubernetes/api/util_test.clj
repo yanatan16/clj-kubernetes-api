@@ -20,4 +20,12 @@
                   :path "/foo"}
             request-opts (#'util/request-opts ctx opts)]
         (is (false? (:insecure? request-opts)))
-        (is (= "fake ssl engine" (:sslengine request-opts)))))))
+        (is (= "fake ssl engine" (:sslengine request-opts))))))
+
+  (testing "when the request method is PATCH, the content type is set to strategic-merge-patch+json"
+    (let [ctx {:username "username"
+               :password "password"}
+          opts {:method :patch
+                :path "/foo"}
+          request-opts (#'util/request-opts ctx opts)]
+      (is (= "application/strategic-merge-patch+json" (get-in request-opts [:headers "Content-Type"]))))))

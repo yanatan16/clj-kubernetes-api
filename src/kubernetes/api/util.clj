@@ -38,7 +38,7 @@
 
 (defn- content-type [method]
   (if (= method :patch)
-    "application/merge-patch+json"
+    "application/strategic-merge-patch+json"
     "application/json"))
 
 (defn parse-response [{:keys [status headers body error]}]
