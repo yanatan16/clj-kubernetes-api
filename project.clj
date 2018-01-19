@@ -1,4 +1,4 @@
-(defproject kubernetes-api "0.7.0"
+(defproject kubernetes-api "1.0.0"
   :description "Kubernetes Client API Library"
   :url "https://github.com/yanatan16/clj-kubernetes-api"
   :license {:name "MIT"
