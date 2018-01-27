@@ -45,6 +45,13 @@
   (testing "when the context does not have a token, it returns false"
     (is (false? (#'util/token? {})))))
 
+(deftest token-fn-test
+  (testing "when the context has a token-fn, it returns true"
+    (is (true? (#'util/token-fn? {:token-fn (fn [ctx req] "token")}))))
+
+  (testing "when the context does not have a token-fn, it returns false"
+    (is (false? (#'util/token-fn? {})))))
+
 (deftest default-request-opts-test
   (let [ctx {:server "http://kubernetes-api"}
         req {:method :get
@@ -97,6 +104,21 @@
                 :path   "/foo"}
           opts (#'util/request-opts ctx req)]
       (is (= "token" (:oauth-token opts)))))
+
+  (testing "when using a function to dynamically generate the bearer token"
+    (let [ctx  {:token-fn (fn [ctx req] "dynamic-token")}
+          req  {:method :get
+                :path   "/foo"}
+          opts (#'util/request-opts ctx req)]
+      (is (= "dynamic-token" (:oauth-token opts)))))
+
+  (testing "when both token and token-fn are provided, the value returned by token fn is used"
+    (let [ctx  {:token    "static-token"
+                :token-fn (fn [ctx req] "dynamic-token")}
+          req  {:method :get
+                :path   "/foo"}
+          opts (#'util/request-opts ctx req)]
+      (is (= "dynamic-token" (:oauth-token opts)))))
 
   (testing "when the request has a body"
     (let [ctx {:token "token"}

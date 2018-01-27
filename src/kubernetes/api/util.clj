@@ -58,13 +58,16 @@
 (defn- token? [{:keys [token]}]
   (some? token))
 
+(defn- token-fn? [{:keys [token-fn]}]
+  (some? token-fn))
+
 (defn- default-request-opts [ctx {:keys [method path params query]}]
   {:url       (url ctx path params query)
    :method    method
    :insecure? (not (client-cert? ctx))
    :as        :text})
 
-(defn- request-opts [{:keys [username password ca-cert client-cert client-key token] :as ctx}
+(defn- request-opts [{:keys [username password ca-cert client-cert client-key token token-fn] :as ctx}
                      {:keys [method body] :as req}]
   (cond-> (default-request-opts ctx req)
     (basic-auth? ctx)
@@ -75,6 +78,9 @@
 
     (token? ctx)
     (assoc :oauth-token token)
+
+    (token-fn? ctx)
+    (assoc :oauth-token (token-fn ctx req))
 
     (some? body)
     (assoc :body    (json/write-str body)
