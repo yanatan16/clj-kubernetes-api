@@ -53,77 +53,63 @@
     (is (false? (#'util/token-fn? {})))))
 
 (deftest default-request-opts-test
-  (let [ctx {:server "http://kubernetes-api"}
-        req {:method :get
-             :path   "/path"}]
+  (let [ctx  {:server "http://kubernetes-api"}
+        opts {:method :get
+              :path   "/path"}]
     (testing "it includes the request url"
       (with-redefs-fn {#'util/url (fn [ctx path params query] "expected-url")}
-        #(is (= "expected-url" (:url (#'util/default-request-opts ctx req))))))
+        #(is (= "expected-url" (:url (#'util/default-request-opts ctx opts))))))
 
     (testing "it includes the request method"
-      (is (= :get (:method (#'util/default-request-opts ctx req)))))
+      (is (= :get (:method (#'util/default-request-opts ctx opts)))))
 
     (testing "it includes whether server's SSL certificates will use strict validation"
       (testing "when using client certificates, it enables strict SSL validation"
         (let [ctx {:ca-cert     "ca"
                    :client-cert "client-cert"
                    :client-key  "client-key"}]
-          (is (false? (:insecure? (#'util/default-request-opts ctx req))))))
+          (is (false? (:insecure? (#'util/default-request-opts ctx opts))))))
 
       (testing "when not using client certificates, it disables strict SSL validation"
         (let [ctx {:username "username"
                    :password "password"}]
-          (is (true? (:insecure? (#'util/default-request-opts ctx req)))))))
+          (is (true? (:insecure? (#'util/default-request-opts ctx opts)))))))
 
     (testing "it includes the output coercion"
-      (is (= :text (:as (#'util/default-request-opts ctx req)))))))
+      (is (= :text (:as (#'util/default-request-opts ctx opts)))))))
 
-(deftest request-opts-test
+(deftest request-auth-opts-test
   (testing "when using basic auth"
     (let [ctx  {:username "username"
                 :password "password"}
-          req  {:method :get
-                :path   "/foo"}
-          opts (#'util/request-opts ctx req)]
-      (is (= "username:password" (:basic-auth opts)))))
+          opts {:method :get
+                :path   "/foo"}]
+      (is (= "username:password" (:basic-auth (#'util/request-auth-opts ctx opts))))))
 
   (testing "when using client certificates"
     (with-redefs [util/new-ssl-engine (constantly "fake ssl engine")]
       (let [ctx  {:ca-cert     "ca"
                   :client-cert "client-cert"
                   :client-key  "client-key"}
-            req  {:method :get
-                  :path   "/foo"}
-            opts (#'util/request-opts ctx req)]
-        (is (false? (:insecure? opts)))
-        (is (= "fake ssl engine" (:sslengine opts))))))
+            opts {:method :get
+                  :path   "/foo"}]
+        (is (= "fake ssl engine" (:sslengine (#'util/request-auth-opts ctx opts)))))))
 
   (testing "when using a bearer token"
     (let [ctx  {:token "token"}
-          req  {:method :get
-                :path   "/foo"}
-          opts (#'util/request-opts ctx req)]
-      (is (= "token" (:oauth-token opts)))))
+          opts {:method :get
+                :path   "/foo"}]
+      (is (= "token" (:oauth-token (#'util/request-auth-opts ctx opts))))))
 
   (testing "when using a function to dynamically generate the bearer token"
-    (let [ctx  {:token-fn (fn [ctx req] "dynamic-token")}
-          req  {:method :get
-                :path   "/foo"}
-          opts (#'util/request-opts ctx req)]
-      (is (= "dynamic-token" (:oauth-token opts)))))
+    (let [ctx  {:token-fn (fn [ctx opts] "dynamic-token")}
+          opts {:method :get
+                :path   "/foo"}]
+      (is (= "dynamic-token" (:oauth-token (#'util/request-auth-opts ctx opts)))))))
 
-  (testing "when both token and token-fn are provided, the value returned by token fn is used"
-    (let [ctx  {:token    "static-token"
-                :token-fn (fn [ctx req] "dynamic-token")}
-          req  {:method :get
-                :path   "/foo"}
-          opts (#'util/request-opts ctx req)]
-      (is (= "dynamic-token" (:oauth-token opts)))))
-
+(deftest request-body-opts-test
   (testing "when the request has a body"
-    (let [ctx {:token "token"}
-          req {:method :post
-               :path   "/foo"
-               :body   {:json true}}
-          opts (#'util/request-opts ctx req)]
-      (is (= "{\"json\":true}" (:body opts))))))
+    (let [opts {:method :post
+                :path   "/foo"
+                :body   {:json true}}]
+      (is (= "{\"json\":true}" (:body (#'util/request-body-opts opts)))))))
