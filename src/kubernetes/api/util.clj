@@ -49,18 +49,36 @@
             (catch Exception e
               body))))
 
-(defn- request-opts [{:keys [username password ca-cert client-cert client-key] :as ctx} {:keys [method path params query body]}]
-  (let [ct (content-type method)
-        basic-auth? (and username password)
-        client-cert? (and ca-cert client-cert client-key)]
-    (cond-> {:url (url ctx path params query)
-             :method method
-             :insecure? (not client-cert?)
-             :as :text}
-      basic-auth? (assoc :basic-auth (new-basic-auth-token username password))
-      client-cert? (assoc :sslengine (new-ssl-engine ca-cert client-cert client-key))
-      body (assoc :body (json/write-str body)
-                  :headers  {"Content-Type" ct}))))
+(defn- basic-auth? [{:keys [username password]}]
+  (every? some? [username password]))
+
+(defn- client-cert? [{:keys [ca-cert client-cert client-key]}]
+  (every? some? [ca-cert client-cert client-key]))
+
+(defn- token? [{:keys [token]}]
+  (some? token))
+
+(defn- default-request-opts [ctx {:keys [method path params query]}]
+  {:url       (url ctx path params query)
+   :method    method
+   :insecure? (not (client-cert? ctx))
+   :as        :text})
+
+(defn- request-opts [{:keys [username password ca-cert client-cert client-key token] :as ctx}
+                     {:keys [method body] :as req}]
+  (cond-> (default-request-opts ctx req)
+    (basic-auth? ctx)
+    (assoc :basic-auth (new-basic-auth-token username password))
+
+    (client-cert? ctx)
+    (assoc :sslengine (new-ssl-engine ca-cert client-cert client-key))
+
+    (token? ctx)
+    (assoc :oauth-token token)
+
+    (some? body)
+    (assoc :body    (json/write-str body)
+           :headers {"Content-Type" (content-type method)})))
 
 (defn request [ctx opts]
   (let [c (chan)]
