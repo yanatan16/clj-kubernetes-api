@@ -58,27 +58,38 @@
 (defn- token? [{:keys [token]}]
   (some? token))
 
+(defn- token-fn? [{:keys [token-fn]}]
+  (some? token-fn))
+
 (defn- default-request-opts [ctx {:keys [method path params query]}]
   {:url       (url ctx path params query)
    :method    method
    :insecure? (not (client-cert? ctx))
    :as        :text})
 
-(defn- request-opts [{:keys [username password ca-cert client-cert client-key token] :as ctx}
-                     {:keys [method body] :as req}]
-  (cond-> (default-request-opts ctx req)
+(defn- request-auth-opts [{:keys [username password ca-cert client-cert client-key token token-fn] :as ctx} opts]
+  (cond
     (basic-auth? ctx)
-    (assoc :basic-auth (new-basic-auth-token username password))
+    {:basic-auth (new-basic-auth-token username password)}
 
     (client-cert? ctx)
-    (assoc :sslengine (new-ssl-engine ca-cert client-cert client-key))
+    {:sslengine (new-ssl-engine ca-cert client-cert client-key)}
 
     (token? ctx)
-    (assoc :oauth-token token)
+    {:oauth-token token}
 
-    (some? body)
-    (assoc :body    (json/write-str body)
-           :headers {"Content-Type" (content-type method)})))
+    (token-fn? ctx)
+    {:oauth-token (token-fn ctx opts)}))
+
+(defn- request-body-opts [{:keys [method body]}]
+  (when (some? body)
+    {:body    (json/write-str body)
+     :headers {"Content-Type" (content-type method)}}))
+
+(defn- request-opts [ctx opts]
+  (merge (default-request-opts ctx opts)
+         (request-auth-opts ctx opts)
+         (request-body-opts opts)))
 
 (defn request [ctx opts]
   (let [c (chan)]
