@@ -41,7 +41,7 @@ Each endpoint function returns a [core.async](https://github.com/clojure/core.as
 
 ## Testing
 
-You need to have `minikube` running locally (`minikube --bootstrapper=kubeadm --kubernetes-version=v1.9.1 start`)
+You need to have `minikube` running locally (`minikube --bootstrapper=kubeadm --kubernetes-version=v1.10.2 start`)
 
 Start the kubernetes proxy to a running k8s cluster (`kubectl proxy --port=8080`)
 
