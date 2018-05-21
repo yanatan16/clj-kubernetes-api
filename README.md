@@ -14,7 +14,7 @@ Add the dependency to your `project.clj`.
 
 First, run a kubernetes proxy with `kubectl proxy --port=8080`.
 
-Each endpoint function returns a [core.async](https://github.com/clojure/core.async) channel. Under the covers, the [http-kit](www.http-kit.org) http client is used.
+Each endpoint function returns a [core.async](https://github.com/clojure/core.async) channel. Under the covers, the [http-kit](https://www.http-kit.org) http client is used.
 
 ```clojure
 (require '[kubernetes.api.v1 :as k8s]
@@ -40,6 +40,8 @@ Each endpoint function returns a [core.async](https://github.com/clojure/core.as
 ```
 
 ## Testing
+
+You need to have `minikube` running locally (`minikube --bootstrapper=kubeadm --kubernetes-version=v1.10.2 start`)
 
 Start the kubernetes proxy to a running k8s cluster (`kubectl proxy --port=8080`)
 
