@@ -1,18 +1,13 @@
 (ns kubernetes.api.apps-v1beta1-test
-  (:require [clojure.test :refer :all]
-            [clojure.string :as str]
-            [clojure.core.async :refer [<!!] :as async]
-            [kubernetes.api.v1 :as v1]
-            [kubernetes.api.apps-v1beta1 :as a-v1beta1]))
-
-(defn random-name []
-  (->> (repeatedly 10 #(rand-int 26))
-       (map #(nth (char-array "abcdefghijklmnopqrstuvwxyz") %))
-       (str/join "")))
+  (:require [clojure.core.async :refer [<!!] :as async]
+            [clojure.test :refer :all]
+            [kubernetes.api.apps-v1beta1 :as a-v1beta1]
+            [kubernetes.api.common :as common]
+            [kubernetes.api.v1 :as v1]))
 
 (def ctx (a-v1beta1/make-context "http://localhost:8080"))
-(def tns (random-name))
-(def stateful-set-name (random-name))
+(def tns (common/random-name))
+(def stateful-set-name (common/random-name))
 
 (def nsopt {:namespace tns})
 (def stateful-set {:apiVersion "apps/v1beta1"

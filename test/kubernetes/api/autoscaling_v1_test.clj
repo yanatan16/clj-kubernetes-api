@@ -1,20 +1,15 @@
 (ns kubernetes.api.autoscaling-v1-test
-  (:require [clojure.test :refer :all]
-            [clojure.string :as str]
-            [clojure.core.async :refer [<!!] :as async]
-            [kubernetes.api.v1 :as v1]
+  (:require [clojure.core.async :refer [<!!] :as async]
+            [clojure.test :refer :all]
             [kubernetes.api.apps-v1 :as apps-v1]
-            [kubernetes.api.autoscaling-v1 :as as-v1]))
-
-(defn random-name []
-  (->> (repeatedly 10 #(rand-int 26))
-       (map #(nth (char-array "abcdefghijklmnopqrstuvwxyz") %))
-       (str/join "")))
+            [kubernetes.api.autoscaling-v1 :as as-v1]
+            [kubernetes.api.common :as common]
+            [kubernetes.api.v1 :as v1]))
 
 (def ctx (as-v1/make-context "http://localhost:8080"))
-(def tns (random-name))
+(def tns (common/random-name))
 
-(def deployment-name (random-name))
+(def deployment-name (common/random-name))
 (def deployment {:apiVersion "apps/v1"
                  :kind       "Deployment"
                  :metadata   {:name deployment-name}
@@ -24,7 +19,7 @@
                                                                   :image "nginx"}]}}}})
 
 (def nsopt {:namespace "default"})
-(def hpa-name (random-name))
+(def hpa-name (common/random-name))
 (def hpa {:apiVersion "autoscaling/v1"
           :kind       "HorizontalPodAutoscaler"
           :metadata   {:name hpa-name}
