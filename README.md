@@ -9,6 +9,7 @@ Kubernetes client API library for Clojure. Functions are generated using macros 
 Add the dependency to your `project.clj`.
 
 [![Clojars Project](https://img.shields.io/clojars/v/nubank/kubernetes-api.svg)](https://clojars.org/nubank/kubernetes-api)
+
 ## Usage
 
 First, run a kubernetes proxy with `kubectl proxy --port=8080`.

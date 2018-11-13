@@ -1,18 +1,13 @@
 (ns kubernetes.api.extensions-v1beta1-test
-  (:require [clojure.test :refer :all]
-            [clojure.string :as str]
-            [clojure.core.async :refer [<!!] :as async]
-            [kubernetes.api.v1 :as v1]
-            [kubernetes.api.extensions-v1beta1 :as e-v1beta1]))
-
-(defn random-name []
-  (->> (repeatedly 10 #(rand-int 26))
-       (map #(nth (char-array "abcdefghijklmnopqrstuvwxyz") %))
-       (str/join "")))
+  (:require [clojure.core.async :refer [<!!] :as async]
+            [clojure.test :refer :all]
+            [kubernetes.api.common :as common]
+            [kubernetes.api.extensions-v1beta1 :as e-v1beta1]
+            [kubernetes.api.v1 :as v1]))
 
 (def ctx (e-v1beta1/make-context "http://localhost:8080"))
-(def tns (random-name))
-(def deployment-name (random-name))
+(def tns (common/random-name))
+(def deployment-name (common/random-name))
 
 (def nsopt {:namespace tns})
 (def deployment {:apiVersion "extensions/v1beta1"
