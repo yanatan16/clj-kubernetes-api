@@ -34,6 +34,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - setup_remote_docker
       - restore_cache:
           keys:
           - censo-{{ checksum "project.clj" }}
