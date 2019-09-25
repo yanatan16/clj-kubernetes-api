@@ -11,5 +11,6 @@ pom.xml.asc
 .hg/
 *.iml
 *.swp
+.idea/*
 
 doc
