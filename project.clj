@@ -1,4 +1,4 @@
-(defproject nubank/kubernetes-api "1.5.0"
+(defproject nubank/kubernetes-api "1.6.0"
   :description "Kubernetes Client API Library"
   :url "https://github.com/yanatan16/clj-kubernetes-api"
   :license {:name "MIT"
