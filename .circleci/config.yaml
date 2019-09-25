@@ -1,0 +1,52 @@
+# Clojure CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-clojure/ for more details
+#
+version: 2.1
+
+job_defaults: &defaults
+  docker:
+    - image: circleci/clojure:lein-2.7.1
+  working_directory: ~/repo
+  environment:
+    LEIN_ROOT: "true"
+    JVM_OPTS: "-Xmx3600m"
+    ENVIRONMENT: "test"
+    AWS_REGION: "us-east-1"
+
+jobs:
+  caches:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - censo-{{ checksum "project.clj" }}
+            # fallback to using the latest cache if no exact match is found
+            - censo-
+      - run: lein deps
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: censo-{{ checksum "project.clj" }}
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - censo-{{ checksum "project.clj" }}
+          - censo-
+      - run: ./.circleci/run-tests.sh
+
+workflows:
+  version: 2
+  pull-request-validation:
+    jobs:
+      - caches:
+          context: clojure-build-test
+      - test:
+          context: clojure-build-test
+          requires:
+            - caches
