@@ -319,6 +319,42 @@
                 "allowMultiple": false
               }
             ]
+          },
+          {
+            "type": "v1alpha1.ScaledObject",
+            "method": "PATCH",
+            "summary": "partially update the specified ScaledObject",
+            "nickname": "patchNamespacedScaledObject",
+            "produces": [
+              "application/json",
+              "application/yaml"
+            ],
+            "parameters": [
+              {
+                "type": "v1.Patch",
+                "paramType": "body",
+                "name": "body",
+                "description": "",
+                "required": true,
+                "allowMultiple": false
+              },
+              {
+                "type": "string",
+                "paramType": "path",
+                "name": "namespace",
+                "description": "object name and auth scope, such as for teams and projects",
+                "required": true,
+                "allowMultiple": false
+              },
+              {
+                "type": "string",
+                "paramType": "path",
+                "name": "name",
+                "description": "name of the Pod",
+                "required": true,
+                "allowMultiple": false
+              }
+            ]
           }
         ]
       }
