@@ -5,6 +5,11 @@
             [clojure.data.json :as json]
             [less.awful.ssl :as ssl]))
 
+(def patch-types {:json-patch            "application/json-patch+json"
+                  :merge-patch           "application/merge-patch+json"
+                  :strategic-merge-patch "application/strategic-merge-patch+json"
+                  :apply-patch           "application/apply-patch+yaml"})
+
 (defn make-context
   ([server] (make-context server {}))
   ([server opts] (merge {:server server} opts)))
@@ -36,10 +41,13 @@
   (-> (ssl/ssl-context client-key client-cert ca-cert)
       ssl/ssl-context->engine))
 
-(defn- content-type [method]
-  (if (= method :patch)
-    "application/strategic-merge-patch+json"
-    "application/json"))
+(defn- content-type
+  ([method]
+   (content-type method nil))
+  ([method patch-type]
+   (if (= method :patch)
+     (or (get patch-types patch-type) (:strategic-merge-patch patch-types))
+     "application/json")))
 
 (defn parse-response [{:keys [status headers body error]}]
   (cond
@@ -81,10 +89,10 @@
     (token-fn? ctx)
     {:oauth-token (token-fn ctx opts)}))
 
-(defn- request-body-opts [{:keys [method body]}]
+(defn- request-body-opts [{:keys [method body patch-type]}]
   (when (some? body)
     {:body    (json/write-str body)
-     :headers {"Content-Type" (content-type method)}}))
+     :headers {"Content-Type" (content-type method patch-type)}}))
 
 (defn- request-opts [ctx opts]
   (merge (default-request-opts ctx opts)

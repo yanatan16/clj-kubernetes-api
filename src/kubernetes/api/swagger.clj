@@ -86,6 +86,7 @@
            :path ~path
            :params (select-keys opts# path-params#)
            :query (select-keys opts# query-params#)
+           :patch-type (:patch-type opts#)
            :body body#})))))
 
 (defn render-api [{:keys [operations] :as api}]
