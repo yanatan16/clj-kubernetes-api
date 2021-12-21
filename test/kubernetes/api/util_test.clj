@@ -2,8 +2,29 @@
   (:require [clojure.test :refer :all]
             [kubernetes.api.util :as util]))
 
+(deftest patch-types-test
+  (testing "when the patch type is :json-patch returns the appropriate content type string"
+    (let [ct (:json-patch util/patch-types)]
+      (is (= "application/json-patch+json" ct))))
+
+  (testing "when the patch type is :merge-patch returns the appropriate content type string"
+    (let [ct (:merge-patch util/patch-types)]
+      (is (= "application/merge-patch+json" ct))))
+
+  (testing "when the patch type is :strategic-merge-patch returns the appropriate content type string"
+    (let [ct (:strategic-merge-patch util/patch-types)]
+      (is (= "application/strategic-merge-patch+json" ct))))
+
+  (testing "when the patch type is :apply-patch returns the appropriate content type string"
+    (let [ct (:apply-patch util/patch-types)]
+      (is (= "application/apply-patch+yaml" ct)))))
+
 (deftest content-type-test
-  (testing "when the request method is PATCH, the content type is strategic-merge-patch+json"
+  (testing "when the request method is PATCH and the patch type is specified, the content type is the one specified"
+    (let [ct (#'util/content-type :patch :merge-patch)]
+      (is (= "application/merge-patch+json" ct))))
+
+  (testing "when the request method is PATCH and the patch type is not specified, the content type is strategic-merge-patch+json"
     (let [ct (#'util/content-type :patch)]
       (is (= "application/strategic-merge-patch+json" ct))))
 
@@ -112,4 +133,11 @@
     (let [opts {:method :post
                 :path   "/foo"
                 :body   {:json true}}]
-      (is (= "{\"json\":true}" (:body (#'util/request-body-opts opts)))))))
+      (is (= "{\"json\":true}" (:body (#'util/request-body-opts opts))))))
+
+  (testing "when the request has a patch type"
+    (let [opts {:method     :patch
+                :path       "/foo"
+                :patch-type :merge-patch
+                :body       {:json true}}]
+      (is (= {"Content-Type" "application/merge-patch+json"} (:headers (#'util/request-body-opts opts)))))))
